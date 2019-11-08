@@ -9,23 +9,23 @@ import javax.swing.JOptionPane;
 public class Conexion {
 
 	private Connection con;
-	
-	public Conexion(){
-		
+
+	public Conexion() {
+
 		try {
 			Class.forName("org.neo4j.jdbc.Driver");
-			
+
 			con = DriverManager.getConnection("jdbc:neo4j:bolt://localhost:7474");
-			
+
 		} catch (ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-				
+
 	}
-	
-	public Connection getConnection(){
+
+	public Connection getConnection() {
 		return con;
 	}
 }
